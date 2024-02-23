@@ -1,6 +1,5 @@
 namespace AUTHENTICATED_API.Model;
-
-public class ProductModel() : ProductModel{
+public class ProductModel: CategoryModel{
     public int Id{get; set;}
     public decimal price{get; set;}
     public string Name{get; set;} = string.Empty;
