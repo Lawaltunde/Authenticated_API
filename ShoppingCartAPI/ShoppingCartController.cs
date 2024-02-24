@@ -10,9 +10,18 @@ namespace MyApp.Namespace
     [ApiController]
     public class ShoppingCartController : ControllerBase
     {
+        //Instance of shoppingcarclass
         ShoppingCartModel shoppingCartModel = new ShoppingCartModel();
         public ShoppingCartModel GetEndpoint(){
             return (shoppingCartModel.productModel.get());
+        }
+
+        public ShoppingCartModel PostEndpoint(int Id){
+            if(shoppingCartModel.Id.get() == Id){
+                return shoppingCartModel.Empty();
+            }
+
+            return shoppingCartModel;
         }
     }
 }
