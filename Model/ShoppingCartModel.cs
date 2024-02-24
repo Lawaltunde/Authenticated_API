@@ -1,15 +1,12 @@
 namespace AUTHENTICATED_API.Model;
 
 public class ShoppingCartModel : ProductModel{
-    //Id property will be inherited from CategoryModel
-    //public int Id{get; set;}
     public string User{get; set;} = string.Empty;
-    public ShoppingCartModel<ProductModel>productModel{get; set;};
+    public List<ProductModel> Products {get; set;} = new List<ProductModel>();
 
-    public CategoryModel(string User, ShoppingCartModel<ProductModel>productModel):base(User, productModel<ProductModel>){
-        //this.Id = ID;
-        this.User = description;
-        this.productModel = productModel;
+    public ShoppingCartModel(decimal price, string Name, string Description, string User, List<ProductModel> products)
+        :base(price, Name, Description){
+        this.User = User;
+        this.Products = products;
     } 
-       
 }
